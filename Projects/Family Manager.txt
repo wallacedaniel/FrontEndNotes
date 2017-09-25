@@ -1,0 +1,42 @@
+
+Family Manger App
+
+
+
+Step 1 Brainstorm Seesion 1
+Step 2 Simple BootStrap Framework Mobile --> Desk
+	Mobile Burger Toggle w Icon tabs and toggle/reveal view--> 3/9 or 4/8 LeftColumn Nav W Tabbed Right Column Layout Dashboard
+Step 3 Create a form for the Create Food Item Tab / No Style - Spreadsheet to refer to DB design
+
+	Member Data
+	Pantry and Resources Manager
+	
+	
+	
+		Food Item CRUD etc forms
+			Items Tab
+				Type Search
+				CREATE Edit Delete
+					Tables:
+			EZ enter In Stock/Out Stock Tab
+			Views and Reports
+			Shopping List
+				Scheduled Suggestions
+				Update schedule
+				Estimated Stock
+			
+			Food Product
+				Name  Location $/lb unitPrice unitSize cal notes category(grains n legumes, meat eggs and dairy, produce, spices, flours, products, frozen, nuts seeds and dried fruits,teas coffee and herbals etc)
+				
+				
+		Household CRUD forms
+		Recipes
+			CRUD forms
+		
+		
+		
+	Finances Manager
+	Task Manager and Calender
+	Maps and Tranportation
+
+	
