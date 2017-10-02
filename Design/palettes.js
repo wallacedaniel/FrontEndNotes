@@ -1,17 +1,27 @@
 
-function palettes(){
-	row = document.getElementsByClassName('.row');
+function display(){
+	
+	
+	
+	
 	
 	for(i=0;i < palettes.length; i++){
 		
-		var newElement = document.createElement('div');
-//newElement.innerHTML = xmlhttp.responseText;
-document.getElementById("some_id").appendChild(newElement);
-		
+		$('.row').append('<div class="col-lg-2"><ul><li>'+ palettes[i][0] +'</li><li>'+ palettes[i][1] +'</li><li>'+ palettes[i][2] +'</li><li>'+ palettes[i][3] +'</li><li>'+ palettes[i][4] +'</li></ul></div>');
+		$('.row').append('<div class="col-lg-2" style="background:'+palettes[i][0]+'"></div>');
+		$('.row').append('<div class="col-lg-2" style="background:'+palettes[i][1]+'"></div>');
+		$('.row').append('<div class="col-lg-2" style="background:'+palettes[i][2]+'"></div>');
+		$('.row').append('<div class="col-lg-2" style="background:'+palettes[i][3]+'"></div>');
+		$('.row').append('<div class="col-lg-2" style="background:'+palettes[i][4]+'"></div>');		
 	}
+	
+	/*
+	row = document.getElementsByClassName('.row');
+	*/
 	
 }
 
+/*
 <div class="row">
 			<div class="col-lg-2">
 				<ul>
@@ -22,7 +32,7 @@ document.getElementById("some_id").appendChild(newElement);
 			<div class="col-lg-2 color2"></div>
 			<div class="col-lg-2 color3"></div>
 			<div class="col-lg-2 color4"></div>
-			<div class="col-lg-2 color5"></div>
+			<div class="col-lg-2 color5"></div */
 			
 
 
