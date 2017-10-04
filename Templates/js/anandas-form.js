@@ -1,5 +1,4 @@
 
-//Comments for all
 
 // CONTACT FORM
 $("#contact-submit").click(function() {
@@ -40,14 +39,16 @@ $('.form-check-input').click(function() {
 	$(this).toggleClass('selected');
 });
 
-// Enables / Disables a field based on which radio is checked - BootStrap quickie?
+// Enables / Disables a field based on which radio is checked - 
 $('#group-radio').change(function() {
 	// Understand this ...https://stackoverflow.com/questions/4702000/toggle-input-disabled-attribute-using-jquery -->
 	$('#qty').prop('disabled', function(i, v) { return !v; });
+	$('#qty').prop('required', function(i, v) { return !v; });
 });
 
 $('#individual-radio').change(function() {
 	$('#qty').prop('disabled', function(i, v) { return !v; });
+	$('#qty').prop('required', function(i, v) { return !v; });
 });
 
 

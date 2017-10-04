@@ -143,7 +143,6 @@
 			
 			
 			
-			
 			<form id="mailing-list" class="col-12" action="" method="">
 				<h2>Mailing List</h2>
 				<div class="form-group">
@@ -161,29 +160,28 @@
 					<input class="form-control" type="email"  name="mailEmail" id="mail-input-email"  required >
 				</div>
 				
-				<!-- When this is checked the other half of this form is enabled -->
 				<div class="form-check">
 				  <label class="form-check-label">
-					<input type="checkbox" class="form-check-label" id="mailing-check">
+					<input type="checkbox" class="form-check-label" id="mailing-check" name="promo">
 					Would you like to receive promotional items as well?
 				  </label>
 				</div>		
 				<div class="additional-info">
 					<div class="form-group">
 						<label for="address1-input">Street Address</label>  
-						<input class="form-control" type="text" name="address1" id="address1-input" disabled maxlength="80"><!-- required when enabled-->
-						<input class="form-control" type="text" name="address2" id="address2-input" disabled  maxlength="80"><!-- required when enabled-->
+						<input class="form-control" type="text" name="address1" id="address1-input" disabled maxlength="80">
+						<input class="form-control address2" type="text" name="address2" id="address2-input" disabled  maxlength="80">
 					</div>
 					
 					<div class="form-group">
 						<label for="city-input">City</label>
-						<input class="form-control" type="text" name="city" id="city-input" disabled maxlength="50"><!-- required when enabled-->
+						<input class="form-control" type="text" name="city" id="city-input" disabled maxlength="50">
 					</div>
 					
 					<div class="form-group">
 						<label for="state-select">State</label>
-						<select class="form-control" id="state-select" name="state" disabled><!-- required when enabled-->
-							<option selected>Select</option>
+						<select class="form-control" id="state-select" name="state" disabled>
+							<option value="select">Select</option>
 							<option>Alabama</option>
 							<option>Alaska</option>
 							<option>Arizona</option>
@@ -201,45 +199,45 @@
 							<option>Iowa</option>
 							<option>Kansas</option>
 							<option>Kentucky</option>
-							<option>Louisiana </option>
+							<option>Louisiana</option>
 							<option>Maine</option>
 							<option>Maryland</option>
-							<option>Massachusetts </option>
+							<option>Massachusetts</option>
 							<option>Michigan</option>
 							<option>Minnisota</option>
-							<option>Mississippi </option>
-							<option>Missouri</option>
-							<option>Montana</option>
-							<option>Nebraska</option>
-							<option>Nevada</option>
-							<option>New Hampshire</option>
-							<option>New Jersey</option>
-							<option>New Mexico</option>
-							<option>New York</option>
-							<option>North Carolina</option>
-							<option>North Dakota</option>
-							<option>Ohio</option>
-							<option>Oklahoma</option>
-							<option>Oregon</option>
-							<option>Pennsylvania</option>
-							<option>Rhode Island </option>
-							<option>South Carolina</option>
-							<option>South Dakota</option>
-							<option>Tennessee</option>
-							<option>Texas</option>
-							<option>Utah </option>
-							<option>Vermont</option>
-							<option>Virginia </option>
-							<option>Washington</option>
-							<option>West Virginia</option>
-							<option>Wisconsin</option>
-							<option>Wyoming</option>
+							<option name="Mississippi">Mississippi</option>
+							<option name="Missouri">Missouri</option>
+							<option name="Montana">Montana</option>
+							<option name="Nebraska">Nebraska</option>
+							<option name="Nevada">Nevada</option>
+							<option name="NewHampshire">New Hampshire</option>
+							<option name="NewJersey">New Jersey</option>
+							<option name="NewMexico">New Mexico</option>
+							<option name="NewYork">New York</option>
+							<option name="NorthCarolina">North Carolina</option>
+							<option name="NorthDakota">North Dakota</option>
+							<option name="Ohio">Ohio</option>
+							<option name="Oklahoma">Oklahoma</option>
+							<option name="Oregon">Oregon</option>
+							<option name="Pennsylvania">Pennsylvania</option>
+							<option name="RhodeIsland">Rhode Island</option>
+							<option name="SouthCarolina">South Carolina</option>
+							<option name="SouthDakota">South Dakota</option>
+							<option name="Tennessee">Tennessee</option>
+							<option name="Texas">Texas</option>
+							<option name="Utah">Utah</option>
+							<option name="Vermont">Vermont</option>
+							<option name="Virginia">Virginia</option>
+							<option name="Washington">Washington</option>
+							<option name="WestVirginia">West Virginia</option>
+							<option name="Wisconsin">Wisconsin</option>
+							<option name="Wyoming">Wyoming</option>
 						</select>
 					</div>
 					
 					<div class="form-group">
 						<label for="zip-input">Zip Code</label>
-						<input class="form-control" type="text" name="zip" id="zip-input" disabled maxlength="10"><!-- required when enabled--> 
+						<input class="form-control" type="text" name="zip" id="zip-input" disabled maxlength="10">
 					</div>
 				</div>
 				

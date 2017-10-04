@@ -1,9 +1,4 @@
 
-// enable address fields on check
-// State Select on Mailing List
-
-// Toggler for 
-
 
 // VENDOR FORM
 $("#vendor-submit").click(function() {
@@ -28,7 +23,7 @@ $("#vendor-submit").click(function() {
 });
 
 
-// MAILING LIST SIGN UP
+// MAILING LIST SIGN UP FORM
 $("#mailing-submit").click(function() {
 	 
 	 var mailingSignUp = {};
@@ -37,6 +32,10 @@ $("#mailing-submit").click(function() {
 		var elementID = $(this);
 		mailingSignUp = addKeyValue(elementID, mailingSignUp);
 	});	
+				
+	elementID = $("#state-select");
+	mailingSignUp = addKeyValue(elementID, mailingSignUp);
+					
 	console.log(mailingSignUp);
 });
 
@@ -47,20 +46,35 @@ $("#mailing-submit").click(function() {
 function addKeyValue(elementID, formObjName){
 	var value = elementID.val();
 	var key = elementID.attr('name');
-	obj = { [key]: value }; 
-	$.extend(formObjName, obj);
+	// filters promo checkbox from result
+	if(key != 'promo'){
+		obj = { [key]: value }; 
+		$.extend(formObjName, obj);
+	}
 	return formObjName;
 }
 
-// Toggles 'selected' class on inputs
+// Toggles 'selected' class on inputs 
 $('.form-check-input').click(function() {	 
 	$(this).toggleClass('selected');
 });
 
-// Enables / disables mailing address info on check change
+// Enables / disables and toggles 'required' on mailing address info on check change
 $('#mailing-check').click(function() {
 	$('.additional-info input').each(function(){
 		$(this).prop('disabled', function(i, v) { return !v; });
+		$(this).prop('required', function(i, v) { return !v; });
+		if($(this).hasClass('address2')){
+			$(this).removeAttr('required');
+		}
+	});	
+	$('.additional-info select').each(function(){
+		$(this).prop('disabled', function(i, v) { return !v; });
+		$(this).prop('required', function(i, v) { return !v; });
 	});
 });
 
+// Removes 'Select' option from selectable options
+$(document).ready(function(){
+	$('option[value="select"]').attr("disabled", "disabled");
+});
