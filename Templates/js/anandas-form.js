@@ -19,6 +19,10 @@ $("#contact-submit").click(function() {
 		var elementID = $(this);
 		newContact = addKeyValue(elementID, newContact);
 	});	
+	
+	var dbRef = 'contactList'
+	dataInput(dbRef, newContact);
+	
 	console.log(newContact);  
 });
 
@@ -51,4 +55,29 @@ $('#individual-radio').change(function() {
 	$('#qty').prop('required', function(i, v) { return !v; });
 });
 
+function dataInput(dbRef, data){
+	
+	var config = {
+		apiKey: "AIzaSyDGZTfzI203kduXIqD4vozaBDKMGJSEyOw",
+		authDomain: "testproject-bbacc.firebaseapp.com",
+		databaseURL: "https://testproject-bbacc.firebaseio.com",
+		projectId: "testproject-bbacc",
+		storageBucket: "",
+		messagingSenderId: "530575455352"
+    };
+	
+    firebase.initializeApp(config);
+	var database = firebase.database();
+	var ref = database.ref(dbRef);
+	ref.push(data);
+	ref.on('value', gotData, errData);	
+}
 
+function gotData(data){
+	console.log(data.val());
+}
+
+function errData(err){
+	console.log('Error!');
+	console.log(err);
+}

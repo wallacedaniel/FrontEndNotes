@@ -19,6 +19,10 @@ $("#vendor-submit").click(function() {
 		var elementID = $(this);
 		newVendor = addKeyValue(elementID, newVendor);
 	});	
+	
+	var dbRef = 'vendorsList'
+	dataInput(dbRef, newVendor);
+	
 	console.log(newVendor);  
 });
 
@@ -35,7 +39,10 @@ $("#mailing-submit").click(function() {
 				
 	elementID = $("#state-select");
 	mailingSignUp = addKeyValue(elementID, mailingSignUp);
-					
+	
+	var dbRef = 'mailingList'
+	dataInput(dbRef, mailingSignUp);
+	
 	console.log(mailingSignUp);
 });
 
@@ -78,3 +85,30 @@ $('#mailing-check').click(function() {
 $(document).ready(function(){
 	$('option[value="select"]').attr("disabled", "disabled");
 });
+
+function dataInput(dbRef, data){
+	
+	var config = {
+		apiKey: "AIzaSyDGZTfzI203kduXIqD4vozaBDKMGJSEyOw",
+		authDomain: "testproject-bbacc.firebaseapp.com",
+		databaseURL: "https://testproject-bbacc.firebaseio.com",
+		projectId: "testproject-bbacc",
+		storageBucket: "",
+		messagingSenderId: "530575455352"
+    };
+	
+    firebase.initializeApp(config);
+	var database = firebase.database();
+	var ref = database.ref(dbRef);
+	ref.push(data);
+	ref.on('value', gotData, errData);	
+}
+
+function gotData(data){
+	console.log(data.val());
+}
+
+function errData(err){
+	console.log('Error!');
+	console.log(err);
+}
