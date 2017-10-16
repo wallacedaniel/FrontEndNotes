@@ -1,3 +1,5 @@
+
+
 <!--BootStrap
 bootstrap-4.0.0-alpha.6
 
@@ -15,30 +17,120 @@ Starter Template with CDN -->
 	<link rel="stylesheet" href="./css/cedrics-style.css" />
   </head>
   <body>
+  
+	<!--Reservation Modal -->
+	<div class="modal fade" id="reservationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+			</button>
+		  </div>
+		  <div class="modal-body">
+			
+			<form id="reservation" action="" method="">
+				<h2>Book Your Reservation</h2>
+				<!-- Change all Name attributes -->
+				
+				<!-- Change back to type submit -->
+				<div class="form-group">
+					<label for="fname-input">First Name</label>
+					<input class="form-control" type="text" name="fname" id="fname-input" maxlength="40" required> 
+				</div>
+				
+				<div class="form-group">
+					<label for="lname-input">Last Name</label>
+					<input class="form-control" type="text" name="lname" id="lname-input" maxlength="40" required> 
+				</div>	
+
+				<div class="form-group">
+					<label for="input-email">Email address</label>
+					<input class="form-control" type="email" name="email" id="input-email" required>
+				</div>
+				
+				<div class="form-group">
+					<label for="phone-input">Phone Number</label>
+					<input class="form-control" type="text" name="phone" id="phone-input" maxlength="30" required>
+				</div>
+				
+				<div class="form-group">
+					<label for="party-input">How many in your party?</label>
+					<input class="form-control" type="number" name="party" id="party-input" aria-describedby="res-msg" min="1" max="20" required>
+					<!--Attach the small to above-->
+					<small id="res-msg" class="form-text text-muted">To accomodate a group larger than 20, please call us at (555)987-6543.</small>
+				</div>
+				
+				<fieldset class="form-group">
+					<legend>Select your preferred dining location. <span>We can't guarantee you will be seated in your chosen location but we will try our best! We will let you know on confirmation.</span></legend>
+					<div class="form-check">
+					  <label class="form-check-label">
+						<input type="radio" class="form-check-input selected" name="location" id="main-radio" value="main" checked>
+						Main Dining
+					  </label>
+					</div>
+					<div class="form-check">
+					<label class="form-check-label">
+						<input type="radio" class="form-check-input" name="location" id="front-radio" value="front">
+						Front Patio
+					  </label>
+					</div>
+					<div class="form-check">
+					<label class="form-check-label">
+						<input type="radio" class="form-check-input" name="location" id="back-radio" value="back">
+						Back Patio
+					  </label>
+					</div>
+					<div class="form-check">
+					<label class="form-check-label">
+						<input type="radio" class="form-check-input" name="location" id="loft-radio" value="loft">
+						The Loft
+					  </label>
+					</div>
+					<div class="form-check">
+					<label class="form-check-label">
+						<input type="radio" class="form-check-input" name="location" id="lounge-radio" value="lounge">
+						The Lounge
+					  </label>
+					</div>
+				</fieldset>
+				
+			
+			
+				Calendar schedule/reservation selector
+			
+				
+				<div class="form-group">
+					<label for="occasion-input">Would you like us to know about a special occasion?</label>
+					<textarea class="form-control form-textarea" name="occasion" id="occasion-input" rows="3" maxlength="500"></textarea>
+				</div>
+			
+				<!-- Newsletter Checkbox -->
+			
+				<button type="button" class="btn btn-primary"  id="reservation-submit">Submit</button>
+				
+				<!-- Confirmation Modal -->
+			
+			</form>
+			
+		  </div>
+		</div>
+	  </div>
+	</div>
  
 	<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-	  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	  </button>
-	  <a class="navbar-brand" href="#">Navbar</a>
+		
+		<button type="button" class="btn btn-primary"  id="reservation-show" data-toggle="modal" data-target="#reservationModal">Reservations</button>
 
-	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-		<ul class="navbar-nav mr-auto">
-		  <li class="nav-item active">
-			<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-		  </li>
-		  <li class="nav-item">
-			<a class="nav-link" href="#">Link</a>
-		  </li>
-		  <li class="nav-item">
-			<a class="nav-link disabled" href="#">Disabled</a>
-		  </li>
-		</ul>
-		<form class="form-inline my-2 my-lg-0">
-		  <input class="form-control mr-sm-2" type="text" placeholder="Search">
-		  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-		</form>
-	  </div>
+		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+		</button>
+		<a class="navbar-brand" href="#">Cedrics<span>Bar & Bistro</span></a>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		
+		
+		</div>
 	</nav>
  
 	<div class="container-fluid">
@@ -46,39 +138,61 @@ Starter Template with CDN -->
 		<div class="row">
 			<div class="col-12">
 			
-				<ul class="nav">    <!--justify-content-center   justify-content-end-->
+				<ul class="nav justify-content-center">    <!--justify-content-center   justify-content-end-->
 				  <li class="nav-item">
-					<a class="nav-link active" href="#">Active</a>
+					<a class="nav-link active" href="#">Menu</a>
 				  </li>
 				  <li class="nav-item">
-					<a class="nav-link" href="#">Link</a>
+					<a class="nav-link" href="#">About</a>
 				  </li>
 				  <li class="nav-item">
-					<a class="nav-link" href="#">Link</a>
+					<a class="nav-link" href="#">Contact</a>
 				  </li>
 				  <li class="nav-item">
-					<a class="nav-link disabled" href="#">Disabled</a>
+					<a class="nav-link" href="#">Map</a>
 				  </li>
 				</ul>
 			
 			</div>
 		</div>
 		
-		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+		
+		
+		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
 		  <ol class="carousel-indicators">
 			<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
 			<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
 			<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
 		  </ol>
 		  <div class="carousel-inner" role="listbox">
-			<div class="carousel-item active">
-			  <img class="d-block img-fluid" src="..." alt="First slide">
+			<div class="carousel-item active ">
+			  <img class="d-block img-fluid" src="./img/burgers.jpg" alt="burgers">
+			  <div class="carousel-caption d-none d-md-block">
+				<h3>Fancy Menu</h3>
+				<p>Consectetur a erat nam at lectus urna. Pellentesque elit eget gravida cum sociis natoque. Felis imperdiet proin fermentum leo vel orci porta. Vestibulum lorem sed risus ultricies tristique nulla aliquet.</p>
+			  </div>
 			</div>
 			<div class="carousel-item">
-			  <img class="d-block img-fluid" src="..." alt="Second slide">
+			  <img class="d-block img-fluid" src="./img/interior.jpg" alt="interior">
+			  <div class="carousel-caption d-none d-md-block">
+				<h3>About Cedrics Bar & Bistro</h3>
+				<p>Gravida cum sociis natoque penatibus et magnis dis parturient montes. Pretium quam vulputate dignissim suspendisse in est ante in nibh. Etiam sit amet nisl purus in mollis nunc sed. Odio morbi quis commodo odio aenean sed adipiscing. Sed augue lacus viverra vitae congue eu.</p>
+			  </div>
 			</div>
 			<div class="carousel-item">
-			  <img class="d-block img-fluid" src="..." alt="Third slide">
+			  <img class="d-block img-fluid" src="./img/wine-dining.jpeg" alt="wine-glass">
+			  <div class="carousel-caption d-none d-md-block">
+				<h3>Contact Cedrics Bar & Bistro</h3>
+				<p>Nam at lectus urna duis convallis convallis tellus id. Amet luctus venenatis lectus magna. Massa sed elementum tempus egestas sed sed risus. Turpis massa sed elementum tempus egestas sed sed risus pretium.</p>
+			  </div>
+			</div>
+			<div class="carousel-item">
+			  <img class="d-block img-fluid" src="./img/cake.jpeg" alt="cake">
+			  <div class="carousel-caption d-none d-md-block">
+				<h3>Locate Cedrics Bar & Bistro</h3>
+				<p>Integer vitae justo eget magna fermentum iaculis eu. Mi proin sed libero enim. Non odio euismod lacinia at quis. Adipiscing enim eu turpis egestas. Ullamcorper eget nulla facilisi etiam dignissim diam quis. Diam volutpat commodo sed egestas egestas fringilla.</p>
+			  </div>
 			</div>
 		  </div>
 		  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -91,27 +205,70 @@ Starter Template with CDN -->
 		  </a>
 		</div>
 		
-		<div class="row">
-			<div class="col-12">
+    </div>
+		
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+				
+					<ul class="nav">    <!--justify-content-center   justify-content-end-->
+					  <li class="nav-item">
+						<a class="nav-link active" href="#">Menu</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="#">About</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="#">Contact</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="#">Map</a>
+					  </li>
+					</ul>
+					
+					Cedrics
+					Bar & Bistro
+					1234 Main St. Portland OR ((97214))
+					(555)987-7654
+					contact@cedricsbistro.com
+					
+					<button type="button" class="btn btn-primary"  id="reservation-show" data-toggle="modal" data-target="#reservationModal">Reservations</button>
+
+					<img src="./img/meat2.jpg" alt="meat" />
+					
+					<form id="newsletter" class="col-12" action="" method="">
 			
-				<ul class="nav">    <!--justify-content-center   justify-content-end-->
-				  <li class="nav-item">
-					<a class="nav-link active" href="#">Active</a>
-				  </li>
-				  <li class="nav-item">
-					<a class="nav-link" href="#">Link</a>
-				  </li>
-				  <li class="nav-item">
-					<a class="nav-link" href="#">Link</a>
-				  </li>
-				  <li class="nav-item">
-					<a class="nav-link disabled" href="#">Disabled</a>
-				  </li>
-				</ul>
+						<h2>Sign Up For Our Newsletter</h2>
+					
+						<div class="form-group">
+							<label for="news-fname-input">First Name</label>
+							<input class="form-control" type="text"  name="newsFname" id="news-fname-input" maxlength="40" required> 
+						</div>
+						
+						<div class="form-group">
+							<label for="news-lname-input">Last Name</label>
+							<input class="form-control" type="text" name="newsLname" id="news-lname-input" maxlength="40" required> 
+						</div>
+
+						<div class="form-group">
+							<label for="news-input-email">Email address</label>
+							<input class="form-control" type="email" name="newsEmail" id="news-input-email" required>
+						</div>
+						<!--back to submit-->
+						<button type="button" class="btn btn-primary" id="signUp-submit">Submit</button>
+						
+						<!-- Confirmation Modal -->
+					
+					</form>
 			
+				
+				</div>
 			</div>
 		</div>
-    </div>
+	</footer>
+	
+	
 	
 	
     <!-- jQuery first, then Tether, then Bootstrap JS. -->

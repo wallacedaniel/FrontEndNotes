@@ -25,17 +25,7 @@ display:;
 
  */
 
-body {
-	background:#551400;
-}
 
-.container-fluid {
-	
-}
-
-.row {
-	
-}
 
 #newsletter {
 	
@@ -49,7 +39,7 @@ form {
 
 }
 
-h2 {
+form h2 {
 	
 }
 
@@ -58,7 +48,7 @@ h2 {
 }
 
 .form-control {
-	background:#c4dbe2;
+	background:;
 }
 
 label {

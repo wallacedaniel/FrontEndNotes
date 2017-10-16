@@ -6,7 +6,19 @@ Image resources
 	pexels.com
 	foodiesfeed.com
 	unsplash.com
+	kaboompics.com
+	stocksnap.io
 	
 Icon resources
 	http://fontawesome.io/icons/      675 icons  w  simple <i>tag</i> insertions
 	linearicons.com/free              via cdn or download
+	
+	
+	
+Sample Sites
+	https://haute-living.com/
+	https://www.weareenvoy.com/
+	
+
+Design resources
+	https://creativemarket.com/  paid market

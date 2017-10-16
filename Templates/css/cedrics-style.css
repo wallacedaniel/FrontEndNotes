@@ -1,0 +1,37 @@
+body {
+	background:;
+}
+
+.carousel-caption {
+    top: 20px;
+}
+
+.container-fluid {
+	
+}
+
+.row {
+	
+}
+
+h2 {
+	
+}
+
+footer {
+	background:#999;
+}
+
+
+
+/*
+
+@media (min-width: 992px){
+
+	.navbar-toggleable-md .navbar-toggler {
+		display: none; 
+	}
+
+}
+
+*/
