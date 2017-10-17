@@ -16,7 +16,7 @@ Starter Template with CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 	<link rel="stylesheet" href="./css/cedrics-style.css" />
   </head>
-  <body>
+  <body data-spy="scroll" data-target="#menu-nav">
   
 	<!--Reservation Modal -->
 	<div class="modal fade" id="reservationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -156,8 +156,6 @@ Starter Template with CDN -->
 			</div>
 		</div>
 		
-		
-		
 		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
 		  <ol class="carousel-indicators">
 			<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -204,6 +202,67 @@ Starter Template with CDN -->
 			<span class="sr-only">Next</span>
 		  </a>
 		</div>
+		
+		<div id="menu-nav">
+		<ul class="nav flex-column">
+		  <li class="nav-item">
+			<a class="nav-link active" href="#specials">Specials</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#lunch">Lunch</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#dinner">Dinner</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#dessert">Dessert</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#bar">Bar</a>
+		  </li>
+		</ul>
+		
+		<div id ="specials">
+			<h2>Cedric's Weekly Specials</h2>
+			<ul>
+				<li>Salmon</li>
+				<li>Lamb</li>
+				<li>Ribs</li>
+			</ul>
+		</div>
+		<div id ="lunch">
+			<h2>Lunch Menu</h2>
+			<ul>
+				<li>Sandwich</li>
+				<li>Burger</li>
+				<li>Soup and Salad</li>
+			</ul>
+		</div>
+		<div id ="dinner">
+			<h2>Dinner Menu</h2>
+			<ul>
+				<li>Steak</li>
+				<li>Fish</li>
+				<li>Chicken</li>
+			</ul>
+		</div>
+		<div id ="dessert">
+			<h2>Dessert Menu</h2>
+			<ul>
+				<li>Chocolate Cake</li>
+				<li>Cherry Pie</li>
+				<li>Hot Fudge</li>
+			</ul>
+		</div>
+		<div id ="bar">
+			<h2>Bar Menu</h2>
+			<ul>
+				<li>Wine</li>
+				<li>Beer</li>
+				<li>Whiskey</li>
+			</ul>
+		</div>
+		
 		
     </div>
 		

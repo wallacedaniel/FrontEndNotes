@@ -1,10 +1,34 @@
 body {
-	background:;
+	position:relative;
+	background:#999;
 }
+
+/*
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+img {
+    vertical-align: middle;
+}
+
+
+*/
 
 .carousel-caption {
     top: 20px;
 }
+
+/* should control carousel animation speed, however no longer slides...just jumps
+.carousel-item {
+    -webkit-transition: 0.3s ease-in-out left;
+    -moz-transition: 0.3s ease-in-out left;
+    -o-transition: 0.3s ease-in-out left;
+    transition: 0.3s ease-in-out left;
+}
+*/
 
 .container-fluid {
 	
@@ -22,16 +46,12 @@ footer {
 	background:#999;
 }
 
-
-
 /*
-
 @media (min-width: 992px){
 
 	.navbar-toggleable-md .navbar-toggler {
-		display: none; 
+		display: inline-block; 
 	}
 
 }
-
 */
