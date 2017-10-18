@@ -18,7 +18,25 @@ document.getElementById("demo").innerHTML = d;
 var dateButton = document.querySelectorAll('#datebutton');
 dateButton.addEventListener('click', createParagraph); 
 
+//Strings
+myString.length
+myString.replace('moz','van');
+myString.toLowerCase();
+myString.toUpperCase();
+myString.slice(0,3);
+myString.indexOf('zilla');
+.ToString();
+Number(myString);
 
+//Array <--> String
+var myArray = myData.split(',');
+var myNewString = myArray.join(',');
+or
+myArray.ToString();   but no (',') alternates as in .join
+
+//Arrays
+.push() and .pop()  <--to/from end
+.shift() and .unshift()  <--to/fromm beginning
 
 
 */

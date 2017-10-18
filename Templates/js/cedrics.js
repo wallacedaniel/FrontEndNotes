@@ -6,18 +6,19 @@
 
 
 $(document).ready(function() {
+	resizeImage();
 
 	//var $w = $(window),
     //$h = $('#home'),
 	  
-	var w = document.documentElement.clientWidth
-	var h = document.documentElement.clientHeight
+	//var w = document.documentElement.clientWidth
+	//var h = document.documentElement.clientHeight
 	
-	var aspectRatio = w / h;
+	//var aspectRatio = w / h;
 	
-	console.log(w);
-	console.log(h);
-	console.log(aspectRatio);
+	//console.log(w);
+	//console.log(h);
+	//console.log(aspectRatio);
 
 	//aspectRatio = 1920 / 1280;
 
@@ -33,6 +34,40 @@ $(document).ready(function() {
   //$w.onload=resizeBg();
 
 });
+
+$('#mainCarousel').on('slide.bs.carousel', function () {
+	
+	
+	resizeImage();
+})
+
+function resizeImage(){
+
+	var img = new Image();
+	//Works on page load, however, fires off before next slide becomes active when called from carousel.on(slide...
+	img.src = $('#mainCarousel .active img').attr('src');
+	
+	var imgW = img.naturalWidth;
+	var imgH = img.naturalHeight;
+	var ratio = imgH / imgW;
+	
+	//console.log(aspectRatio);
+	//console.log(img.src);
+	
+	var imgWidth = $('#mainCarousel .active img').width();
+	var imgHeight = imgWidth * ratio;
+	$('#mainCarousel .active img').css("height",imgHeight);
+	
+	//console.log(imgHeight);
+	//console.log(imgWidth);
+	
+	//var img = new Image();
+	//img.src = $('#mainCarousel .active img');
+	//console.log(imgSource.src);
+	//console.log(img.naturalWidth);
+	//console.log(img.naturalHeight);
+	
+}
 
 
 

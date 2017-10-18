@@ -14,7 +14,6 @@
 		<div class="row">
 			<form id="reservation" class="col-12" action="" method="">
 				<h2>Book Your Reservation</h2>
-				<!-- Change all Name attributes -->
 				
 				<!-- Change back to type submit -->
 				<div class="form-group">
@@ -29,7 +28,7 @@
 
 				<div class="form-group">
 					<label for="input-email">Email address</label>
-					<input class="form-control" type="email" name="email" id="input-email" required>
+					<input class="form-control" type="email" name="email" id="email-input" required>
 				</div>
 				
 				<div class="form-group">
@@ -88,7 +87,12 @@
 					<textarea class="form-control form-textarea" name="occasion" id="occasion-input" rows="3" maxlength="500"></textarea>
 				</div>
 			
-				<!-- Newsletter Checkbox -->
+				<div class="form-check">
+					<label class="form-check-label">
+					<input type="radio" class="form-check-input" name="newsletter-include" id="news-include-radio" value="news">
+					Would you like to sign up for our newsletter?
+				  </label>
+				</div>
 			
 				<button type="button" class="btn btn-primary"  id="reservation-submit">Submit</button>
 				
@@ -130,7 +134,7 @@
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="./js/cedrics-form.js"></script>
+	<script type="text/javascript" src="./js/cedrics-form-wkey.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
   </body>
 </html>

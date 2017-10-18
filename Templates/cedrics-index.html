@@ -46,7 +46,7 @@ Starter Template with CDN -->
 
 				<div class="form-group">
 					<label for="input-email">Email address</label>
-					<input class="form-control" type="email" name="email" id="input-email" required>
+					<input class="form-control" type="email" name="email" id="email-input" required>
 				</div>
 				
 				<div class="form-group">
@@ -105,7 +105,12 @@ Starter Template with CDN -->
 					<textarea class="form-control form-textarea" name="occasion" id="occasion-input" rows="3" maxlength="500"></textarea>
 				</div>
 			
-				<!-- Newsletter Checkbox -->
+				<div class="form-check">
+					<label class="form-check-label">
+					<input type="radio" class="form-check-input" name="newsletter-include" id="news-include-radio" value="news">
+					Would you like to sign up for our newsletter?
+				  </label>
+				</div>
 			
 				<button type="button" class="btn btn-primary"  id="reservation-submit">Submit</button>
 				
@@ -118,7 +123,7 @@ Starter Template with CDN -->
 	  </div>
 	</div>
  
-	<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+	<nav class="navbar navbar-toggleable-md navbar-light bg-faded fixed-top">
 		
 		<button type="button" class="btn btn-primary"  id="reservation-show" data-toggle="modal" data-target="#reservationModal">Reservations</button>
 
@@ -131,37 +136,41 @@ Starter Template with CDN -->
 		
 		
 		</div>
-	</nav>
- 
-	<div class="container-fluid">
-	
+		
 		<div class="row">
 			<div class="col-12">
 			
-				<ul class="nav justify-content-center">    <!--justify-content-center   justify-content-end-->
+				<ul class="nav justify-content-center">    
 				  <li class="nav-item">
-					<a class="nav-link active" href="#">Menu</a>
+					<!--this first link should just reveal the menu rather than just the slide-->
+					<a class="nav-link active" href="#mainCarousel" data-target="#mainCarousel" data-slide-to="0">Menu</a>
 				  </li>
 				  <li class="nav-item">
-					<a class="nav-link" href="#">About</a>
+					<a class="nav-link" href="#mainCarousel" data-target="#mainCarousel" data-slide-to="1">About</a>
 				  </li>
 				  <li class="nav-item">
-					<a class="nav-link" href="#">Contact</a>
+					<a class="nav-link" href="#mainCarousel" data-target="#mainCarousel" data-slide-to="2">Contact</a>
 				  </li>
 				  <li class="nav-item">
-					<a class="nav-link" href="#">Map</a>
+					<a class="nav-link" href="#mainCarousel" data-target="#mainCarousel" data-slide-to="3">Map</a>
 				  </li>
-				</ul>
+				</ul>	
 			
 			</div>
 		</div>
 		
-		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
+	</nav>
+ 
+	<div class="container-fluid">
+	
+		
+		
+		<div id="mainCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
 		  <ol class="carousel-indicators">
-			<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-			<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-			<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-			<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+			<li data-target="#mainCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#mainCarousel" data-slide-to="1"></li>
+			<li data-target="#mainCarousel" data-slide-to="2"></li>
+			<li data-target="#mainCarousel" data-slide-to="3"></li>
 		  </ol>
 		  <div class="carousel-inner" role="listbox">
 			<div class="carousel-item active ">
@@ -193,11 +202,11 @@ Starter Template with CDN -->
 			  </div>
 			</div>
 		  </div>
-		  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+		  <a class="carousel-control-prev" href="#mainCarousel" role="button" data-slide="prev">
 			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 			<span class="sr-only">Previous</span>
 		  </a>
-		  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+		  <a class="carousel-control-next" href="#mainCarousel" role="button" data-slide="next">
 			<span class="carousel-control-next-icon" aria-hidden="true"></span>
 			<span class="sr-only">Next</span>
 		  </a>
@@ -273,16 +282,16 @@ Starter Template with CDN -->
 				
 					<ul class="nav">    <!--justify-content-center   justify-content-end-->
 					  <li class="nav-item">
-						<a class="nav-link active" href="#">Menu</a>
+						<a class="nav-link" href="#mainCarousel" data-target="#mainCarousel" data-slide-to="0">Menu</a>
 					  </li>
 					  <li class="nav-item">
-						<a class="nav-link" href="#">About</a>
+						<a class="nav-link" href="#mainCarousel" data-target="#mainCarousel" data-slide-to="1">About</a>
 					  </li>
 					  <li class="nav-item">
-						<a class="nav-link" href="#">Contact</a>
+						<a class="nav-link" href="#mainCarousel" data-target="#mainCarousel" data-slide-to="2">Contact</a>
 					  </li>
 					  <li class="nav-item">
-						<a class="nav-link" href="#">Map</a>
+						<a class="nav-link" href="#mainCarousel" data-target="#mainCarousel" data-slide-to="3">Map</a>
 					  </li>
 					</ul>
 					
@@ -335,6 +344,8 @@ Starter Template with CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="./js/cedrics.js"></script>
+	<script type="text/javascript" src="./js/cedrics-form-wkey.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
   </body>
 </html>
 

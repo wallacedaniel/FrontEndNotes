@@ -1,8 +1,7 @@
-Sticky Top
+Top Nav & header built and push down carousel
+	Image Size to screen height 
 
 Keep the burger
-
-Link nav to sliders
 
 Animate in captions
 
@@ -12,12 +11,12 @@ Scroll Down Removes Carousel
 
 Vertical Icon Menu
 
-Image Size to screen height  
+ 
 
 Footer Design
 Footer Form animated
 
-Newsletter Checkbox in Form
+Newsletter Checkbox in Form 
 
 Cursor change shape over left/right carousel 
 

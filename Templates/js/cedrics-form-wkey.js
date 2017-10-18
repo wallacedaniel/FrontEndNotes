@@ -4,11 +4,17 @@
 $("#reservation-submit").click(function() {
 	
   var newReservation = {};
+  var newsLetterSignUp = {};
 
   $("#reservation input").each(function() {
 		var elementID = $(this);
 		if($(this).hasClass('form-control')){
 			newReservation = addKeyValue(elementID, newReservation);
+			
+			if($('#news-include-radio').prop('checked')) /*  && ($(this) == $('#fname-input') || $(this) === $('#lname-input') || $(this) === $('#email-input')*/{   
+				console.log($(this));
+				//newsLetterSignUp = addKeyValue(elementID, newsLetterSignUp);
+			}
 		}
 		if($(this).hasClass('form-check-input') && $(this).hasClass('selected')){
 			newReservation = addKeyValue(elementID, newReservation);
@@ -23,7 +29,13 @@ $("#reservation-submit").click(function() {
 	var dbRef = 'reservations'
 	dataInput(dbRef, newReservation);
 	
-	console.log(newReservation);  
+	if(newsLetterSignUp.length > 0){
+		var dbRef = 'signUp'
+		dataInput(dbRef, newsLetterSignUp);
+	}
+	
+	console.log(newReservation); 
+	console.log(newsLetterSignUp);	
 });
 
 
@@ -91,7 +103,7 @@ function gotData(data){
 	
 	for(var i = 0; i < keys.length; i++){
 		var k = keys[i];
-		console.log(k);
+		//console.log(k);
 		//var name = reservations[k].fname + reservations[k].lname;
 		//console.log(name);
 	}
