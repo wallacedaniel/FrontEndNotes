@@ -1,5 +1,3 @@
-
-
 // RESERVATION FORM
 $("#reservation-submit").click(function() {
 	
@@ -11,12 +9,12 @@ $("#reservation-submit").click(function() {
 		if($(this).hasClass('form-control')){
 			newReservation = addKeyValue(elementID, newReservation);
 			
-			if($('#news-include-radio').prop('checked')) /*  && ($(this) == $('#fname-input') || $(this) === $('#lname-input') || $(this) === $('#email-input')*/{   
-				console.log($(this));
-				//newsLetterSignUp = addKeyValue(elementID, newsLetterSignUp);
+			if($('#news-include-radio').prop('checked') && (($(this).attr('id')== 'fname-input') || ($(this).attr('id')== 'lname-input') || ($(this).attr('id')== 'email-input'))){ 
+				newsLetterSignUp = addKeyValue(elementID, newsLetterSignUp);
 			}
+			
 		}
-		if($(this).hasClass('form-check-input') && $(this).hasClass('selected')){
+		if($(this).hasClass('form-check-input') && $(this).hasClass('selected') && ($(this).attr('id') != 'news-include-radio')) {  
 			newReservation = addKeyValue(elementID, newReservation);
 		}
 	});	
@@ -26,16 +24,10 @@ $("#reservation-submit").click(function() {
 		newReservation = addKeyValue(elementID, newReservation);
 	});	
 	
-	var dbRef = 'reservations'
-	dataInput(dbRef, newReservation);
-	
-	if(newsLetterSignUp.length > 0){
-		var dbRef = 'signUp'
-		dataInput(dbRef, newsLetterSignUp);
-	}
-	
-	console.log(newReservation); 
-	console.log(newsLetterSignUp);	
+	var dbRef = 'reservations';
+	console.log(newsLetterSignUp);
+	//var dbRef2 = 'signUp'
+	dataInput(dbRef, newReservation); //, dbRef2, newsLetterSignUp
 });
 
 
@@ -51,13 +43,9 @@ $("#signUp-submit").click(function() {
 	
 	var dbRef = 'signUp'
 	dataInput(dbRef, newsLetterSignUp);
-	
-	console.log(newsLetterSignUp);
 });
 
-
 // FUNCTIONS
-
 // Assigns key value pairs to form objects
 function addKeyValue(elementID, formObjName){
 	var value = elementID.val();
@@ -72,9 +60,7 @@ $('.form-check-input').click(function() {
 	$(this).toggleClass('selected');
 });
 
-
-
-function dataInput(dbRef, data){
+function dataInput(dbRef, data){  //, dbRef2, data2
 	
 	var config = {
 		apiKey: "AIzaSyDGZTfzI203kduXIqD4vozaBDKMGJSEyOw",
@@ -90,24 +76,22 @@ function dataInput(dbRef, data){
 	var ref = database.ref(dbRef);
 	ref.push(data);
 	ref.on('value', gotData, errData);
-	
+/*
+	if(dbRef2){
+		var ref2 = database.ref(dbRef2);
+		ref2.push(data2);
+		ref2.on('value', gotData, errData);
+	}
+*/
 }
 
-function gotData(data){
-	//console.log(data.val());
-	
-	var reservations = data.val();
-	var keys = Object.keys(reservation);
+function gotData(data){	
+	var input = data.val();
+	var keys = Object.keys(input);
 
-	//console.log(keys);
-	
 	for(var i = 0; i < keys.length; i++){
 		var k = keys[i];
-		//console.log(k);
-		//var name = reservations[k].fname + reservations[k].lname;
-		//console.log(name);
-	}
-	
+	}	
 }
 
 function errData(err){
